@@ -82,6 +82,11 @@ const addCart = (id, count= 1)=> {
 	updateCartList(cartList)
 }
 
+export const clearCart = () => {
+	localStorage.removeItem('cart')
+	renderCartList([])
+}
+
 const removeCart = (id) => {
 	const cartList=getCart()
 	const productIndex = cartList.findIndex((item)=> item.id===id)
